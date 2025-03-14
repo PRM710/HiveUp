@@ -1,5 +1,5 @@
 import React from 'react';
-import '../app.css';
+import '../App.css';
 
 const Logo = '/assets/Logo.png';
 const number1 = '/assets/number1.png';
