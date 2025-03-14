@@ -1,0 +1,136 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ensure Full Coverage */
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: black;
+}
+
+/* Mobile Home Container */
+.mobile-home {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Ensures sections stack vertically */
+    font-family: Arial, sans-serif;
+}
+
+/* Section 1 - Fullscreen Background */
+.mobsec1 {
+    background-image: url('../assets/mobg1.png'); /* Background Image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Section 2 - Below Section 1 */
+.mobsec2 {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: black; /* Dark Grey Background */
+}
+
+.mobsec3 {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: black; /* Dark Grey Background */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .mobsec1, .mobsec2 {
+        font-size: 20px;
+        padding: 20px;
+    }
+}
+
+/* Mobile Menu Styles */
+.mobile-menu-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+  }
+  
+  /* Menu Icon (Hamburger) */
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+  }
+  
+  .menu-icon .bar {
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transition: 0.3s;
+  }
+  
+  /* Rotate bars when menu is active */
+  .rotate1 {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .rotate2 {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
+/* Mobile Logo Container */
+.mobile-logo-container {
+    position: fixed;
+    top: 10px;
+    left: 15px;
+    z-index: 200;
+    width: 60px; /* Adjust size */
+}
+
+.mobile-logo {
+    width: 100%;
+    height: auto;
+}
+
+  
+  /* Hide logo & menu text on mobile */
+  @media (max-width: 1228.8px) {
+    .logo-container, .menu-text {
+      display: none;
+    }
+  }
+  

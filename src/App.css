@@ -1,0 +1,198 @@
+/* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Inter Tight';
+  src: url('../assets/fonts/Inter_Tight/static/InterTight.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter Tight';
+  src: url('../assets/fonts/Inter_Tight/static/InterTight-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter Tight';
+  src: url('../assets/fonts/Inter_Tight/static/InterTight-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter Tight';
+  src: url('../assets/fonts/Inter_Tight/static/InterTight-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+
+
+/* Socials container on the top left */
+.socials-container {
+  position: fixed;
+  top: 50px;  /* Adjusted positioning */
+  left: 100px; /* Adjusted positioning */
+  display: flex;
+  gap: 23px; /* Reduced gap between icons */
+  z-index: 1005; /* Keeps icons above other elements */
+}
+
+/* Styling for social icons */
+.social-icon {
+  width: 25px; /* Reduced icon size */
+  height: 25px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.social-icon:hover {
+  transform: scale(1.1); /* Slight hover effect */
+}
+
+
+.logo-container {
+  position: fixed;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1010;
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+  z-index: 1001;
+}
+
+/* Menu Container */
+.menu-container {
+  z-index: 1010; /* Ensure it's above other elements */
+  position: fixed;
+  top: 40px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Menu Text */
+.menu-text {
+  margin-top: -20px; 
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  margin-right: 10px;
+}
+
+/* Menu Icon */
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 41px;
+  height: 12px; /* Adjusted height */
+}
+
+/* Bars (Thinner Hamburger Menu) */
+.bar {
+  width: 41px;
+  height: 1.5px; /* Make it thinner */
+  background-color: white;
+  border-radius: 5px;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Ensure bars are visible in menu state */
+.bar:first-child {
+  transform: translateY(-5px);  /* Moves top bar up */
+}
+
+.bar:last-child {
+  transform: translateY(5px);   /* Moves bottom bar down */
+}
+
+/* Transform into Cross (X) */
+.menu-icon .rotate1 {
+  transform: rotate(45deg) translate(0px, 0px);
+  height: 1px; 
+}
+
+.menu-icon .rotate2 {
+  transform: rotate(-45deg) translate(0px, 0px);
+  height: 1px; 
+}
+
+
+
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+/* Ensure the whole page is black and scrollable */
+/* Enable smooth scrolling */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+.whole {
+  width: 100%;
+}
+
+.section {
+  height: 100vh; /* Full viewport height */
+  width: 100vw;  /* Full viewport width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+  background-color: black;
+}
+
+.section1 {
+  height: 120vh; /* Increase height beyond 100vh */
+  padding-bottom: 50px; /* Adds extra space at the bottom */
+}
+
+
+.section2 {
+  height: 140vh;
+}
+
+.section3 {
+  height: 200vh;
+}
+
+.section4 {
+  height: 140vh;
+}
+
+
+
