@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../app.css';
+import '../App.css';
 
 const bgPost = '/assets/bg_post.png';
 const grid = '/assets/grid.png';
