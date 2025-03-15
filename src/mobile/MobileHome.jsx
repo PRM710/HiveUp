@@ -42,13 +42,7 @@ function MobileHome() {
 const [activeIndex, setActiveIndex] = useState(null);
 
 const handleCardClick = (clickedIndex) => {
-  setCards((prevCards) => {
-    const updatedCards = [...prevCards];
-    const selectedCard = updatedCards.splice(clickedIndex, 1)[0]; // Remove clicked card
-    updatedCards.push(selectedCard); // Move it to the last position
-    return updatedCards;
-  });
-  setActiveIndex(clickedIndex); // Set the clicked card as active
+  setActiveIndex(clickedIndex); // Set the clicked card as active (on top)
 };
 
   return (
@@ -150,7 +144,6 @@ const handleCardClick = (clickedIndex) => {
     How Does It Work?
 </div>
 
-
 <div 
   style={{
     position: 'relative',
@@ -170,14 +163,14 @@ const handleCardClick = (clickedIndex) => {
       onClick={() => handleCardClick(index)}
       style={{
         position: 'absolute',
-        top: `${130 - index * 55}px`, // Moves each card downward
+        top: `${130 - index * 55}px`, // Maintain stacking order
         width: '320px',
         height: '320px',
         objectFit: 'contain',
-        transition: 'all 0.5s ease-in-out',
-        zIndex: index === activeIndex ? 10 : cards.length - index, // Ensure clicked card is on top
-        transform: index === activeIndex ? 'scale(1.1)' : 'scale(1)', // Slightly enlarges the selected card
-        cursor: 'pointer'
+        transition: 'all 0.3s ease-in-out',
+        zIndex: index === activeIndex ? 10 : cards.length - index, // Bring clicked card to top
+        transform: index === activeIndex ? 'scale(1.1)' : 'scale(1)', // Slightly enlarge selected card
+        cursor: 'pointer',
       }}
     />
   ))}
