@@ -200,11 +200,12 @@ function MobileHome() {
           position: 'relative'
         }}
       >
+
         {/* ✅ Centered Image (rect.png) */}
         <div 
   style={{
     position: 'absolute',
-    top: '50%', 
+    top: '46%', 
     left: '50%', 
     transform: 'translate(-50%, -50%)', 
     width: '330px', 
@@ -306,7 +307,7 @@ function MobileHome() {
   className="mobsec4"
   style={{
     width: '100vw',
-    height: '190vh', // Adjust height as needed
+    height: '160vh', // Adjust height as needed
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -323,6 +324,7 @@ function MobileHome() {
 {/* ✅ Replacing rect small PNG with a rectangle and overlaying mobpic */}
 <div 
   style={{
+    marginTop:'-150px',
     position: 'relative', // ✅ Allows positioning child elements
     width: '330px', 
     height: '100px',
