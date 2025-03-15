@@ -121,25 +121,25 @@ function MobileHome() {
       >
         <div style={{ 
     color:'#B0B0B0',
-    marginRight: '15px', 
+
     width: '350px', 
     textAlign:'left',
     height: 'auto', 
     marginTop: '20px', 
     marginBottom: '10px',
     fontWeight:'600', 
-    fontSize: '21px', 
+    fontSize: '18px', 
      
 }}>
     We put the pieces together<br/> so that you don’t have to
 </div>
 
 <div style={{
-    marginLeft:'135px',
+    marginLeft:'150px',
     width: '500px', 
     height: 'auto', 
     marginTop: '10px', 
-    fontSize: '40px', 
+    fontSize: '35px', 
     fontWeight: '550', 
     textAlign: 'left' 
 }}>
@@ -149,10 +149,11 @@ function MobileHome() {
 
 <div 
           style={{
+            marginRight:'50px',
             position: 'relative',
             width: '360px',
             height: '360px',
-            marginTop: '60px',
+            marginTop: '80px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -166,8 +167,8 @@ function MobileHome() {
               style={{
                 position: 'absolute',
                 top: `${130 - index * 55}px`, // Moves each card downward
-                width: '360px',
-                height: '360px',
+                width: '320px',
+                height: '320px',
                 objectFit: 'contain',
                 transition: 'transform 0.5s ease-in-out',
                 zIndex: cards.length - index, // Ensure the front card is on top
@@ -179,11 +180,11 @@ function MobileHome() {
         <button 
           onClick={handleNextCard}
           style={{
-            marginLeft:'250px',
+            marginLeft:'150px',
             fontSize:'15px',
             fontWeight:'600',
             opacity:'0.3',
-            marginTop: '20px', 
+            marginTop: '5px', 
             padding: '12px 24px',
             backgroundColor: 'white',
             color: 'black',
@@ -226,7 +227,7 @@ function MobileHome() {
   style={{
     
     position: 'absolute',
-    top: '4%', // ✅ Same position as `services.png`
+    top: '8%', // ✅ Same position as `services.png`
     left: '50%', 
     transform: 'translateX(-50%)', // ✅ Centers horizontally
     fontSize: '45px',
@@ -244,7 +245,7 @@ function MobileHome() {
 <div 
   style={{
     position: 'absolute',
-    top: '7%', // ✅ Same position as `we.png`
+    top: '11%', // ✅ Same position as `we.png`
     left: '50%', 
     transform: 'translateX(-50%)', 
     fontSize: '13px',
