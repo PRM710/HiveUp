@@ -200,10 +200,6 @@ function MobileHome() {
           position: 'relative'
         }}
       >
-{/* ✅ Services Text (Replaces services.png) */}
-
-
-
         {/* ✅ Centered Image (rect.png) */}
         <div 
   style={{
@@ -224,10 +220,10 @@ function MobileHome() {
   style={{
     
     position: 'absolute',
-    top: '2%', // ✅ Same position as `services.png`
+    top: '3.5%', // ✅ Same position as `services.png`
     left: '50%', 
     transform: 'translateX(-50%)', // ✅ Centers horizontally
-    fontSize: '45px',
+    fontSize: '42px',
     fontWeight: 'bold',
     color: 'black',
     width:'400px',
@@ -242,7 +238,7 @@ function MobileHome() {
 <div 
   style={{
     position: 'absolute',
-    top: '5%', // ✅ Same position as `we.png`
+    top: '6%', // ✅ Same position as `we.png`
     left: '50%', 
     transform: 'translateX(-50%)', 
     fontSize: '11px',
@@ -260,7 +256,7 @@ function MobileHome() {
 <div 
   style={{
     position: 'absolute',
-    top: '8%', // Positioned below `we.png`
+    top: '9%', // Positioned below `we.png`
     left: '50%',
     transform: 'translateX(-50%)',
     display: 'flex',
