@@ -301,7 +301,7 @@ function MobileHome() {
           alt="learn"
           style={{
             position: 'absolute',
-            marginTop: '950px', 
+            marginTop: '850px', 
             left: '50%', 
             transform: 'translateX(-50%)', 
             width: '200px', 
@@ -314,7 +314,7 @@ function MobileHome() {
   alt="All Services Mobile"
   style={{
     position: 'absolute',
-    bottom: '320px', // ✅ Places it slightly below `rect.png`
+    bottom: '350px', // ✅ Places it slightly below `rect.png`
     left: '50%', 
     transform: 'translateX(-50%)', // ✅ Centers image horizontally
     width: '355px', 
