@@ -24,10 +24,28 @@ const buzzmob = '/assets2/buzzmob.png';
 const smallrect = '/assets2/smallrectmob.png';
 const get = '/assets2/get.png';
 const logo = '/assets2/logo.png';
+const mobpic = '/assets2/mobpic.png'
+const About = '/assets2/about.png';
+const card1 = '/assets2/card1.png';
+const card2 = '/assets2/card2.png';
+const card3 = '/assets2/card3.png';
+const card4 = '/assets2/card4.png';
+const { useState } from 'react';
 
 
 
 function MobileHome() {
+
+  const [cards, setCards] = useState([card1, card2, card3, card4]);
+
+  const handleNextCard = () => {
+    setCards((prevCards) => {
+      const updatedCards = [...prevCards];
+      const firstCard = updatedCards.shift(); // Remove the first card
+      updatedCards.push(firstCard); // Move it to the last position
+      return updatedCards;
+    });
+  };
   return (
     <div className="mobile-home">
       {/* Section 1 */}
@@ -48,14 +66,36 @@ function MobileHome() {
           color: 'white',
           fontSize: '24px',
           fontWeight: 'bold',
-          paddingTop: '40px',
+          paddingTop: '30px',
           position: 'relative'
         }}
       >
         <img src={mobglet} alt="Top Image" style={{ marginTop: '80px', width: '200px', height: 'auto', marginBottom: '20px' }} />
         <img src={touch} alt="Touch Image" style={{ width: '146px', height: 'auto', marginTop: '10px', marginBottom: '20px' }} />
-        <img src={welcome} alt="Welcome Image" style={{ width: '320px', height: 'auto', marginTop: '40px' }} />
-        <img src={cutting} alt="Cutting Image" style={{ width: '320px', height: 'auto', marginTop: '60px' }} />
+        <div style={{ 
+  width: '400px', 
+  marginTop: '40px', 
+  backgroundColor: 'transparent',
+  textAlign: 'left',
+  marginLeft:'50px',
+  fontWeight:'750', 
+  fontSize: '20px', // Adjust as needed
+  lineHeight: '1.2' // Improves readability
+}}>
+  Welcome to HiveUp—<br/> your hub for AI, Web3, and software<br/>
+  innovation. We build scalable, secure,<br/>
+  and intelligent solutions, specializing in<br/>
+  AI-powered tokenization,<br/>
+  smart contracts, automation,<br/>
+  and full-stack development.
+</div>
+
+        <div style={{ width: '340px', height: '100px', marginTop: '40px', backgroundColor: 'transparent',  textAlign: 'left',
+  color:'#B0B0B0',
+  marginLeft:'0px',
+  fontWeight:'750', 
+  fontSize: '20px', // Adjust as needed
+  lineHeight: '1.2' }}>Our cutting-edge approach sets us<br/> apart, driving the future of<br/> digital innovation.</div>
         <img src={envo} alt="Envo Image" style={{ position: 'absolute', bottom: '20px', right: '20px', width: '56px', height: 'auto', zIndex: 10 }} />
       </section>
 
@@ -78,9 +118,87 @@ function MobileHome() {
           position: 'relative'
         }}
       >
-        <img src={weput} alt="We Put Image" style={{ marginRight: '70px', width: '250px', height: 'auto', marginTop: '20px', marginBottom: '10px' }} />
-        <img src={howdoes} alt="How Does Image" style={{ width: '320px', height: 'auto', marginTop: '10px' }} />
-        <img src={requestmob} alt="Request Mobile" style={{ position: 'absolute', bottom: '150px', left: '50%', transform: 'translateX(-50%)', width: '147px', height: 'auto' }} />
+        <div style={{ 
+    color:'#B0B0B0',
+    marginRight: '15px', 
+    width: '350px', 
+    textAlign:'left',
+    height: 'auto', 
+    marginTop: '20px', 
+    marginBottom: '10px',
+    fontWeight:'600', 
+    fontSize: '21px', 
+     
+}}>
+    We put the pieces together<br/> so that you don’t have to
+</div>
+
+<div style={{
+    marginLeft:'135px',
+    width: '500px', 
+    height: 'auto', 
+    marginTop: '10px', 
+    fontSize: '40px', 
+    fontWeight: '550', 
+    textAlign: 'left' 
+}}>
+    How Does It Work?
+</div>
+
+
+<div 
+          style={{
+            position: 'relative',
+            width: '360px',
+            height: '360px',
+            marginTop: '60px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          {cards.map((card, index) => (
+            <img 
+              key={index}
+              src={card} 
+              alt={`Card ${index + 1}`}
+              style={{
+                position: 'absolute',
+                top: `${130 - index * 55}px`, // Moves each card downward
+                width: '360px',
+                height: '360px',
+                objectFit: 'contain',
+                transition: 'transform 0.5s ease-in-out',
+                zIndex: cards.length - index, // Ensure the front card is on top
+              }}
+            />
+          ))}
+        </div>
+
+        <button 
+          onClick={handleNextCard}
+          style={{
+            marginLeft:'250px',
+            fontSize:'15px',
+            fontWeight:'600',
+            opacity:'0.3',
+            marginTop: '20px', 
+            padding: '12px 24px',
+            backgroundColor: 'white',
+            color: 'black',
+            border: 'none',
+            borderRadius: '8px',
+            cursor: 'pointer',
+ 
+            zIndex:50
+          }}
+        >
+          Next
+        </button>
+
+
+
+        <img src={requestmob} alt="Request Mobile" style={{ position: 'absolute', bottom: '120px', left: '50%', transform: 'translateX(-50%)', width: '147px', height: 'auto' }} />
         <img src={brandsmob} alt="Brands Mobile" style={{ position: 'absolute', bottom: '10px', left: '50%', transform: 'translateX(-50%)', width: '300px', height: 'auto' }} />
       </section>
 
@@ -102,51 +220,60 @@ function MobileHome() {
           position: 'relative'
         }}
       >
-        {/* ✅ Services Image (Slightly Above `rect.png`) */}
-        <img 
-          src={services} 
-          alt="Services Image"
-          style={{
-            position: 'absolute',
-            top: '5%', // ✅ Moves it slightly above `rect.png`
-            left: '50%', 
-            transform: 'translateX(-50%)', // ✅ Centers image horizontally
-            width: '250px', 
-            height: 'auto', 
-            zIndex: 3 
-          }}
-        />
+{/* ✅ Services Text (Replaces services.png) */}
+<div 
+  style={{
+    
+    position: 'absolute',
+    top: '4%', // ✅ Same position as `services.png`
+    left: '50%', 
+    transform: 'translateX(-50%)', // ✅ Centers horizontally
+    fontSize: '45px',
+    fontWeight: 'bold',
+    color: 'black',
+    width:'400px',
+    textAlign: 'center',
+    zIndex: 3 
+  }}
+>
+  Our Services
+</div>
 
-        {/* ✅ `we.png` Below `services.png` */}
-        <img 
-          src={we} 
-          alt="we"
-          style={{
-            position: 'absolute',
-            top: '8%', 
-            left: '50%', 
-            transform: 'translateX(-50%)', 
-            width: '340px', 
-            height: 'auto', 
-            zIndex: 3 
-          }}
-        />
+{/* ✅ Description Text (Replaces we.png) */}
+<div 
+  style={{
+    position: 'absolute',
+    top: '7%', // ✅ Same position as `we.png`
+    left: '50%', 
+    transform: 'translateX(-50%)', 
+    fontSize: '13px',
+    fontWeight: '600',
+    color: '#B0B0B0', // ✅ Subtle contrast
+    textAlign: 'center',
+    width: '90%', // ✅ Ensures proper wrapping
+    zIndex: 3 
+  }}
+>
+  We engineer AI, blockchain and digital solutions to power innovation, elevate brands and drive growth.<br/>
+</div>
+
 
         {/* ✅ Centered Image (rect.png) */}
-        <img 
-          src={rect} 
-          alt="Centered Image"
-          style={{
-            position: 'absolute',
-            top: '50%', 
-            left: '50%', 
-            transform: 'translate(-50%, -50%)', 
-            width: '350px', 
-            height: 'auto', 
-            objectFit: 'cover', 
-            zIndex: 2 
-          }}
-        />
+        <div 
+  style={{
+    position: 'absolute',
+    top: '50%', 
+    left: '50%', 
+    transform: 'translate(-50%, -50%)', 
+    width: '380px', 
+    height: '2110px', 
+    minHeight: '600px', // Ensures enough space
+    backgroundColor: 'white', 
+    borderRadius: '20px', // ✅ Rounded corners
+    boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)', // ✅ Subtle shadow for depth
+    zIndex: 2
+  }}
+></div>
 
 {/* ✅ Wrapper div for service images */}
 <div 
@@ -158,21 +285,21 @@ function MobileHome() {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    gap: '70px', // ✅ Equal spacing between images
+    gap: '40px', // ✅ Equal spacing between images
     zIndex: 5
   }}
 >
-  <img src={service1} alt="Service 1" style={{ width: '274px', height: '240px' }} />
-  <img src={service2} alt="Service 2" style={{ width: '274px', height: '240px' }} />
-  <img src={service3} alt="Service 3" style={{ width: '274px', height: '240px' }} />
-  <img src={service4} alt="Service 4" style={{ width: '274px', height: '240px' }} />
+  <img src={service1} alt="Service 1" style={{ width: '300px', height: '280px' }} />
+  <img src={service2} alt="Service 2" style={{ width: '300px', height: '280px'  }} />
+  <img src={service3} alt="Service 3" style={{ width: '300px', height: '280px'  }} />
+  <img src={service4} alt="Service 4" style={{ width: '300px', height: '280px'  }} />
 </div>
 <img 
           src={learn} 
           alt="learn"
           style={{
             position: 'absolute',
-            marginTop: '980px', 
+            marginTop: '1200px', 
             left: '50%', 
             transform: 'translateX(-50%)', 
             width: '200px', 
@@ -185,7 +312,7 @@ function MobileHome() {
   alt="All Services Mobile"
   style={{
     position: 'absolute',
-    bottom: '180px', // ✅ Places it slightly below `rect.png`
+    bottom: '220px', // ✅ Places it slightly below `rect.png`
     left: '50%', 
     transform: 'translateX(-50%)', // ✅ Centers image horizontally
     width: '355px', 
@@ -213,16 +340,43 @@ function MobileHome() {
     paddingTop: '40px' // ✅ Adds spacing from top
   }}
 >
-  {/* ✅ BuzzMob Image on Top */}
+{/* ✅ Replacing rect small PNG with a rectangle and overlaying mobpic */}
+<div 
+  style={{
+    position: 'relative', // ✅ Allows positioning child elements
+    width: '380px', 
+    height: '100px',
+    backgroundColor: 'white', 
+    borderRadius: '25px', 
+    marginBottom: '100px' 
+  }}
+>
+  {/* ✅ mobpic positioned on the left side */}
   <img 
-    src={smallrect} 
-    alt="rect small"
+    src={mobpic} 
+    alt="Mob Pic"
     style={{
-      width: '360px', 
-      height: 'auto',
-      marginBottom: '100px' // ✅ Space below the image
-    }}
+      position: 'absolute',
+      top: '50%', // ✅ Aligns vertically
+      left: '20px', // ✅ Positions it on the left
+      transform: 'translateY(-50%)', // ✅ Centers it properly
+      width: '156px', 
+      height: '61px' 
+    }} 
   />
+    <img 
+    src={About} 
+    alt="About"
+    style={{
+      position: 'absolute',
+      top: '50%', // ✅ Aligns vertically
+      right: '40px', // ✅ Positions it on the left
+      transform: 'translateY(-50%)', // ✅ Centers it properly
+      width: '25px', 
+      height: '25px' 
+    }} 
+  />
+</div>
   <img 
     src={buzzmob} 
     alt="Buzz Mobile"
@@ -267,7 +421,6 @@ function MobileHome() {
   {/* Contact Section */}
   <div>
     <h3 style={{textAlign:'left', fontSize: '18px', marginBottom: '35px', fontWeight: 900}}>Contact</h3>
-    <p style={{ margin: '2px 0', fontWeight: 600 , color: '#B0B0B0', marginBottom: '15px' }}>+91 9933001027</p>
     <p style={{ margin: '2px 0', fontWeight: 600 , color: '#B0B0B0', marginBottom: '15px' }}>+91 9082945753</p>
     <p style={{ margin: '2px 0', fontWeight: 'lighter' }}>
       <a href="mailto:hi@hiveup.co.in" style={{ color: '#B0B0B0', textDecoration: 'underline', fontWeight: 600  }}>
