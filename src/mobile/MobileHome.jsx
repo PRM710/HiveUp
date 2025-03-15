@@ -187,7 +187,7 @@ function MobileHome() {
         className="mobsec3"
         style={{
           width: '100vw',
-          height: '320vh', // Full height
+          height: '300vh', // Full height
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -208,7 +208,7 @@ function MobileHome() {
     left: '50%', 
     transform: 'translate(-50%, -50%)', 
     width: '330px', 
-    height: '2000px', 
+    height: '1800px', 
     minHeight: '600px', // Ensures enough space
     backgroundColor: 'white', 
     borderRadius: '20px', // ✅ Rounded corners
@@ -289,7 +289,7 @@ function MobileHome() {
   alt="All Services Mobile"
   style={{
     position: 'absolute',
-    bottom: '220px', // ✅ Places it slightly below `rect.png`
+    bottom: '30px', // ✅ Places it slightly below `rect.png`
     left: '50%', 
     transform: 'translateX(-50%)', // ✅ Centers image horizontally
     width: '355px', 
