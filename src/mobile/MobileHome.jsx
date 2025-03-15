@@ -39,14 +39,18 @@ function MobileHome() {
 
   const [cards, setCards] = useState([card1, card2, card3, card4]);
 
-  const handleNextCard = () => {
-    setCards((prevCards) => {
-      const updatedCards = [...prevCards];
-      const firstCard = updatedCards.shift(); // Remove the first card
-      updatedCards.push(firstCard); // Move it to the last position
-      return updatedCards;
-    });
-  };
+const [activeIndex, setActiveIndex] = useState(null);
+
+const handleCardClick = (clickedIndex) => {
+  setCards((prevCards) => {
+    const updatedCards = [...prevCards];
+    const selectedCard = updatedCards.splice(clickedIndex, 1)[0]; // Remove clicked card
+    updatedCards.push(selectedCard); // Move it to the last position
+    return updatedCards;
+  });
+  setActiveIndex(clickedIndex); // Set the clicked card as active
+};
+
   return (
     <div className="mobile-home">
       {/* Section 1 */}
@@ -148,58 +152,36 @@ function MobileHome() {
 
 
 <div 
-          style={{
-            marginRight:'50px',
-            position: 'relative',
-            width: '360px',
-            height: '360px',
-            marginTop: '80px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          {cards.map((card, index) => (
-            <img 
-              key={index}
-              src={card} 
-              alt={`Card ${index + 1}`}
-              style={{
-                position: 'absolute',
-                top: `${130 - index * 55}px`, // Moves each card downward
-                width: '320px',
-                height: '320px',
-                objectFit: 'contain',
-                transition: 'transform 0.5s ease-in-out',
-                zIndex: cards.length - index, // Ensure the front card is on top
-              }}
-            />
-          ))}
-        </div>
-
-        <button 
-          onClick={handleNextCard}
-          style={{
-            marginLeft:'150px',
-            fontSize:'15px',
-            fontWeight:'600',
-            opacity:'0.3',
-            marginTop: '5px', 
-            padding: '12px 24px',
-            backgroundColor: 'white',
-            color: 'black',
-            border: 'none',
-            borderRadius: '8px',
-            cursor: 'pointer',
- 
-            zIndex:50
-          }}
-        >
-          Next
-        </button>
-
-
-
+  style={{
+    position: 'relative',
+    width: '360px',
+    height: '360px',
+    marginTop: '80px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }}
+>
+  {cards.map((card, index) => (
+    <img 
+      key={index}
+      src={card} 
+      alt={`Card ${index + 1}`}
+      onClick={() => handleCardClick(index)}
+      style={{
+        position: 'absolute',
+        top: `${130 - index * 55}px`, // Moves each card downward
+        width: '320px',
+        height: '320px',
+        objectFit: 'contain',
+        transition: 'all 0.5s ease-in-out',
+        zIndex: index === activeIndex ? 10 : cards.length - index, // Ensure clicked card is on top
+        transform: index === activeIndex ? 'scale(1.1)' : 'scale(1)', // Slightly enlarges the selected card
+        cursor: 'pointer'
+      }}
+    />
+  ))}
+</div>
         <img src={requestmob} alt="Request Mobile" style={{ position: 'absolute', bottom: '120px', left: '50%', transform: 'translateX(-50%)', width: '147px', height: 'auto' }} />
         <img src={brandsmob} alt="Brands Mobile" style={{ position: 'absolute', bottom: '10px', left: '50%', transform: 'translateX(-50%)', width: '300px', height: 'auto' }} />
       </section>
