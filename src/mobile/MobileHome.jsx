@@ -166,7 +166,7 @@ const handleCardClick = (clickedIndex) => {
       onClick={() => handleCardClick(index)}
       style={{
         position: 'absolute',
-        top: `${130 - index * 55}px`, // Maintain stacking order
+        top: index === 0 ? "50px" : `${130 - index * 55}px`,
         width: '320px',
         height: '320px',
         objectFit: 'contain',
