@@ -267,7 +267,7 @@ function MobileHome() {
     top: '50%', 
     left: '50%', 
     transform: 'translate(-50%, -50%)', 
-    width: '380px', 
+    width: '330px', 
     height: '2110px', 
     minHeight: '600px', // Ensures enough space
     backgroundColor: 'white', 
@@ -346,7 +346,7 @@ function MobileHome() {
 <div 
   style={{
     position: 'relative', // ✅ Allows positioning child elements
-    width: '380px', 
+    width: '330px', 
     height: '100px',
     backgroundColor: 'white', 
     borderRadius: '25px', 
