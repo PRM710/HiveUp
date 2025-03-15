@@ -223,11 +223,30 @@ function MobileHome() {
         }}
       >
 {/* ✅ Services Text (Replaces services.png) */}
+
+
+
+        {/* ✅ Centered Image (rect.png) */}
+        <div 
+  style={{
+    position: 'absolute',
+    top: '50%', 
+    left: '50%', 
+    transform: 'translate(-50%, -50%)', 
+    width: '330px', 
+    height: '2000px', 
+    minHeight: '600px', // Ensures enough space
+    backgroundColor: 'white', 
+    borderRadius: '20px', // ✅ Rounded corners
+    boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)', // ✅ Subtle shadow for depth
+    zIndex: 2
+  }}
+>
 <div 
   style={{
     
     position: 'absolute',
-    top: '8%', // ✅ Same position as `services.png`
+    top: '2%', // ✅ Same position as `services.png`
     left: '50%', 
     transform: 'translateX(-50%)', // ✅ Centers horizontally
     fontSize: '45px',
@@ -245,43 +264,25 @@ function MobileHome() {
 <div 
   style={{
     position: 'absolute',
-    top: '11%', // ✅ Same position as `we.png`
+    top: '5%', // ✅ Same position as `we.png`
     left: '50%', 
     transform: 'translateX(-50%)', 
-    fontSize: '13px',
+    fontSize: '11px',
     fontWeight: '600',
     color: '#B0B0B0', // ✅ Subtle contrast
     textAlign: 'center',
-    width: '90%', // ✅ Ensures proper wrapping
+    width: '320px', // ✅ Ensures proper wrapping
     zIndex: 3 
   }}
 >
   We engineer AI, blockchain and digital solutions to power innovation, elevate brands and drive growth.<br/>
 </div>
 
-
-        {/* ✅ Centered Image (rect.png) */}
-        <div 
-  style={{
-    position: 'absolute',
-    top: '50%', 
-    left: '50%', 
-    transform: 'translate(-50%, -50%)', 
-    width: '330px', 
-    height: '2110px', 
-    minHeight: '600px', // Ensures enough space
-    backgroundColor: 'white', 
-    borderRadius: '20px', // ✅ Rounded corners
-    boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)', // ✅ Subtle shadow for depth
-    zIndex: 2
-  }}
-></div>
-
 {/* ✅ Wrapper div for service images */}
 <div 
   style={{
     position: 'absolute',
-    top: '13%', // Positioned below `we.png`
+    top: '8%', // Positioned below `we.png`
     left: '50%',
     transform: 'translateX(-50%)',
     display: 'flex',
@@ -301,7 +302,7 @@ function MobileHome() {
           alt="learn"
           style={{
             position: 'absolute',
-            marginTop: '850px', 
+            marginTop: '1450px', 
             left: '50%', 
             transform: 'translateX(-50%)', 
             width: '200px', 
@@ -314,7 +315,7 @@ function MobileHome() {
   alt="All Services Mobile"
   style={{
     position: 'absolute',
-    bottom: '350px', // ✅ Places it slightly below `rect.png`
+    bottom: '220px', // ✅ Places it slightly below `rect.png`
     left: '50%', 
     transform: 'translateX(-50%)', // ✅ Centers image horizontally
     width: '355px', 
@@ -322,6 +323,9 @@ function MobileHome() {
     zIndex: 4 // Ensures visibility above `rect.png`
   }}
 />
+
+</div>
+
       </section>
       {/* ✅ New Section 4 Below Section 3 */}
       <section 
