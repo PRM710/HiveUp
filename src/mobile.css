@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+img:focus, button:focus {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* Ensure Full Coverage */
 html, body {
     width: 100%;
