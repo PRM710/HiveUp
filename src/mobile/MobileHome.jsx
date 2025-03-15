@@ -37,17 +37,18 @@ import { useState } from 'react';
 
 function MobileHome() {
 
-const [cards, setCards] = useState([card1, card2, card3, card4]);
+  const [cards, setCards] = useState([card1, card2, card3, card4]);
 
-const handleCardClick = (clickedIndex) => {
-  if (clickedIndex === 0) return; // No change if the first card is clicked
+  const handleCardClick = (clickedIndex) => {
+    if (clickedIndex === 0) return; // No change if the first card is clicked
 
-  setCards((prevCards) => {
-    const updatedCards = [...prevCards];
-    [updatedCards[0], updatedCards[clickedIndex]] = [updatedCards[clickedIndex], updatedCards[0]]; // Swap positions
-    return updatedCards;
-  });
-};
+    setCards((prevCards) => {
+      const updatedCards = [...prevCards];
+      // Swap the clicked card with the first card
+      [updatedCards[0], updatedCards[clickedIndex]] = [updatedCards[clickedIndex], updatedCards[0]];
+      return updatedCards;
+    });
+  };
 
   return (
     <div className="mobile-home">
@@ -147,35 +148,36 @@ const handleCardClick = (clickedIndex) => {
 }}>
     How Does It Work?
 </div>
-<div 
-  style={{
-    position: 'relative',
-    width: '360px',
-    height: '360px',
-    marginTop: '80px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }}
->
-  {cards.map((card, index) => (
-    <img 
-      key={index}
-      src={card} 
-      alt={`Card ${index + 1}`}
-      onClick={() => handleCardClick(index)}
+    <div
       style={{
-        position: 'absolute',
-        top: index === 0 ? "50px" : `${130 - index * 55}px`,
-        width: '320px',
-        height: '320px',
-        objectFit: 'contain',
-        transition: 'all 0.3s ease-in-out',
-        cursor: 'pointer',
+        position: "relative",
+        width: "360px",
+        height: "360px",
+        marginTop: "80px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
       }}
-    />
-  ))}
-</div>
+    >
+      {cards.map((card, index) => (
+        <img
+          key={index}
+          src={card}
+          alt={`Card ${index + 1}`}
+          onClick={() => handleCardClick(index)}
+          style={{
+            position: "absolute",
+            top: index === 0 ? "150px" : `${130 - index * 55}px`, // Moves the first card lower
+            width: "320px",
+            height: "320px",
+            objectFit: "contain",
+            transition: "top 0.5s ease-in-out",
+            cursor: "pointer",
+            zIndex: cards.length - index, // Maintain stacking order
+          }}
+        />
+      ))}
+    </div>
         <img src={requestmob} alt="Request Mobile" style={{ position: 'absolute', bottom: '120px', left: '50%', transform: 'translateX(-50%)', width: '147px', height: 'auto' }} />
         <img src={brandsmob} alt="Brands Mobile" style={{ position: 'absolute', bottom: '10px', left: '50%', transform: 'translateX(-50%)', width: '300px', height: 'auto' }} />
       </section>
