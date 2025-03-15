@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+img:focus, button:focus {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
 @font-face {
   font-family: 'Inter Tight';
   src: url('../assets/fonts/Inter_Tight/static/InterTight.ttf') format('truetype');
