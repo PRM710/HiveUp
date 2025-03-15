@@ -178,7 +178,7 @@ function MobileHome() {
         />
       ))}
     </div>
-        <img src={requestmob} alt="Request Mobile" style={{ position: 'absolute', bottom: '145px', left: '50%', transform: 'translateX(-50%)', width: '147px', height: 'auto' }} />
+        <img src={requestmob} alt="Request Mobile" style={{ position: 'absolute', bottom: '150px', left: '50%', transform: 'translateX(-50%)', width: '147px', height: 'auto' }} />
         <img src={brandsmob} alt="Brands Mobile" style={{ position: 'absolute', bottom: '10px', left: '50%', transform: 'translateX(-50%)', width: '300px', height: 'auto' }} />
       </section>
 
