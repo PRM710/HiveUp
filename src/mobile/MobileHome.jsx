@@ -30,7 +30,8 @@ const card1 = '/assets2/card1.png';
 const card2 = '/assets2/card2.png';
 const card3 = '/assets2/card3.png';
 const card4 = '/assets2/card4.png';
-const { useState } from 'react';
+import { useState } from 'react';
+
 
 
 
