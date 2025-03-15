@@ -37,12 +37,16 @@ import { useState } from 'react';
 
 function MobileHome() {
 
-  const [cards, setCards] = useState([card1, card2, card3, card4]);
-
-const [activeIndex, setActiveIndex] = useState(null);
+const [cards, setCards] = useState([card1, card2, card3, card4]);
 
 const handleCardClick = (clickedIndex) => {
-  setActiveIndex(clickedIndex); // Set the clicked card as active (on top)
+  if (clickedIndex === 0) return; // No change if the first card is clicked
+
+  setCards((prevCards) => {
+    const updatedCards = [...prevCards];
+    [updatedCards[0], updatedCards[clickedIndex]] = [updatedCards[clickedIndex], updatedCards[0]]; // Swap positions
+    return updatedCards;
+  });
 };
 
   return (
@@ -143,7 +147,6 @@ const handleCardClick = (clickedIndex) => {
 }}>
     How Does It Work?
 </div>
-
 <div 
   style={{
     position: 'relative',
@@ -168,8 +171,6 @@ const handleCardClick = (clickedIndex) => {
         height: '320px',
         objectFit: 'contain',
         transition: 'all 0.3s ease-in-out',
-        zIndex: index === activeIndex ? 10 : cards.length - index, // Bring clicked card to top
-        transform: index === activeIndex ? 'scale(1.1)' : 'scale(1)', // Slightly enlarge selected card
         cursor: 'pointer',
       }}
     />
