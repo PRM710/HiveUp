@@ -505,15 +505,12 @@ function Home() {
     <div style={{ textAlign: 'center' }}>
       <h3 style={{ fontSize: '1.4rem', marginBottom: '30px' }}>Home</h3>
       <p style={{ fontSize: '1.1rem', margin: '12px 0' }}>+91 9833001027</p>
-      <p style={{ fontSize: '1.1rem', margin: '2px 0' }}>+91 9082945753</p>
     </div>
 
     {/* Team */}
     <div style={{ textAlign: 'center' }}>
       <h3 style={{ fontSize: '1.4rem', marginBottom: '30px' }}>Team</h3>
-      <p style={{ fontSize: '1.1rem', margin: '12px 0' }}>Ahart Dhivar</p>
       <p style={{ fontSize: '1.1rem', margin: '12px 0' }}>Prakash Mane</p>
-      <p style={{ fontSize: '1.1rem', margin: '2px 0' }}>Viraj</p>
     </div>
 
     {/* Follow Us */}
