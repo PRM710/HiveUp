@@ -321,7 +321,7 @@ function Home() {
   <div 
     style={{
       position: 'absolute',
-      top: '12%',  
+      top: '20%',  
       left: '50%', 
       transform: 'translateX(-50%)', 
       color: 'grey',
@@ -421,7 +421,7 @@ function Home() {
 {/* New GRPic Image on top of smallrect */}
 <img 
   src={grpic} 
-  alt="Graphic Overlay" 
+  alt="picture of team" 
   style={{
     position: 'absolute',
     top: '25.5%',  // Adjust this based on where you want to place it
